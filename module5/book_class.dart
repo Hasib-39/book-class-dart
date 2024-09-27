@@ -1,16 +1,16 @@
 class Book {
-  String title = 'Book';
-  String author = 'Guest';
-  int publicationYear = 2024;
-  int pagesRead = 0;
+  String _title = 'Book';
+  String _author = 'Guest';
+  int _publicationYear = 2024;
+  int _pagesRead = 0;
   static int totalBooks = 0;
 
-  Book(this.title, this.author, this.publicationYear, this.pagesRead) {
+  Book(this._title, this._author, this._publicationYear, this._pagesRead) {
     totalBooks++;
   }
   void read(int pages) {
     if (pages >= 0) {
-      pagesRead += pages;
+      _pagesRead += pages;
       print('You read $pages pages more.');
     } else {
       print('Negative value not allowed!! Pls try again.');
@@ -18,25 +18,25 @@ class Book {
   }
 
   int getPagesRead() {
-    return pagesRead;
+    return _pagesRead;
   }
 
   String getTitle() {
-    return title;
+    return _title;
   }
 
   String getAuthor() {
-    return author;
+    return _author;
   }
 
   int getPublicationYear() {
-    return publicationYear;
+    return _publicationYear;
   }
 
   // book age in years
   int getBookAge() {
     DateTime now = DateTime.now();
     int currentYear = now.year;
-    return currentYear - publicationYear;
+    return currentYear - _publicationYear;
   }
 }
